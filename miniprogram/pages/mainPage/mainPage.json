@@ -1,0 +1,17 @@
+{
+    "component": true,
+    "styleIsolation": "apply-shared",
+
+  "usingComponents": {
+    "t-tabs": "tdesign-miniprogram/tabs/tabs",
+    "t-tab-panel": "tdesign-miniprogram/tab-panel/tab-panel",
+    "t-sticky": "tdesign-miniprogram/sticky/sticky",
+    "t-navbar": "tdesign-miniprogram/navbar/navbar",
+    "t-swiper": "tdesign-miniprogram/swiper/swiper",
+    "t-swiper-nav": "tdesign-miniprogram/swiper-nav/swiper-nav",
+    "t-button": "tdesign-miniprogram/button/button",
+    "t-icon": "tdesign-miniprogram/icon/icon"
+  },
+  
+  "pageOrientation": "auto"
+}

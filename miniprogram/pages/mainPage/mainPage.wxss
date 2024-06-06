@@ -1,0 +1,88 @@
+/* pages/mainPage/mainPage.wxss */
+.swiperBox{
+    padding: 32rpx;
+   }
+
+.button-example {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 32rpx 32rpx;
+    gap: 32rpx; /* 在按钮之间添加32rpx的间距 */
+  }
+
+.button-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-content {
+    padding-right: 12rpx; /* 维持原有的右侧内边距 */
+    margin-right: 12rpx; /* 新增文字和图标之间的12rpx外边距 */
+}
+
+.text-content {
+    padding-left: 12rpx; /* 在文字的左侧添加12rpx的内边距 */
+}
+
+  .custom-title {
+    margin-left: 16rpx;
+    font-size: 36rpx;
+    font-weight: 600;
+  }
+  
+  .block {
+    display: block;
+    margin-bottom: 48rpx;
+  }
+  
+  .demo-desc {
+    margin-top: 48rpx;
+    margin-bottom: 32rpx;
+  }
+  
+  .left-text {
+    display: block;
+    margin-left: 8rpx;
+    font-size: 16px;
+  }
+  
+  .header-title {
+    font-size: 28px;
+    line-height: 36px;
+    padding: 8rpx 32rpx 16rpx;
+    background-color: var(--td-bg-color-container);
+    font-weight: 600;
+    color: var(--td-text-color-primary);
+  }
+
+  .tab-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .t-tabs.t-tabs--top .t-tabs__item,
+  .t-tabs.t-tabs--bottom .t-tabs__item {
+    height: 86rpx !important;
+  }
+
+  /* .custom-tabs {
+    margin-bottom: 32rpx;
+  }
+  
+  .custom-panel {
+    color: var(--td-text-color-success);
+  } */
+
+  .scroll-box {
+    width: 100%;
+    white-space: nowrap;
+    }
+  .scroll-box .box{
+    display:inline-block
+    }
+
+.border-box{
+    box-sizing: border-box;
+}

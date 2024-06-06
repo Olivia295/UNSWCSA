@@ -1,0 +1,2 @@
+<!--pages/activityShowPage/activityShowPage.wxml-->
+<text>pages/activityShowPage/activityShowPage.wxml{{id}}</text>

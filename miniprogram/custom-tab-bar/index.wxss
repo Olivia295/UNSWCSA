@@ -1,0 +1,13 @@
+/* components/index.wxss */
+.custom-wrapper {
+    --td-tab-bar-color: var(--td-gray-color-7, #777777);
+    --td-tab-bar-active-color: var(--td-primary-color-8, #003cab);
+  }
+
+  .wrapper {
+    --td-tab-bar-border-color: var(--td-border-level-1-color, #e7e7e7);
+    /* --td-tab-bar-bg-color: var(--td-bg-color-secondarycontainer, #f3f3f3); */
+    --td-tab-bar-hover-color: #ddd;
+    --td-tab-bar-item-color: var(--td-text-color-primary, rgba(0, 0, 0, 0.9));
+    --td-tab-bar-item-active-color: var(--td-brand-color, #0052d9);
+  }

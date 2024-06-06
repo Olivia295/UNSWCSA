@@ -1,0 +1,73 @@
+/* pages/profilePage/profilePage.wxss */
+.avatar-example {
+    margin-right: 64rpx;
+  }
+
+  /* .demo {
+    padding-bottom: 56rpx;
+  }
+  .demo-title {
+    font-size: 48rpx;
+    font-weight: 700;
+    line-height: 64rpx;
+    margin: 48rpx 32rpx 0;
+    color: var(--td-font-gray-1);
+  }
+  .demo-desc {
+    font-size: 28rpx;
+    color: var(--td-font-gray-2, rgba(0, 0, 0, 0.6));
+    margin: 16rpx 32rpx 0;
+    line-height: 44rpx;
+  } */
+
+.cell {
+    --td-cell-note-font-size: 10px;
+}
+
+.user-center-card {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 480rpx;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 0 24rpx;
+  }
+  .user-center-card__header {
+    margin-top: 192rpx;
+    margin-bottom: 48rpx;
+    height: 96rpx;
+    line-height: 48rpx;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: #333;
+    position: relative;
+  }
+  .user-center-card__header__avatar {
+    width: 96rpx;
+    height: 96rpx;
+    border-radius: 48rpx;
+    overflow: hidden;
+  }
+  
+  .user-center-card__header__name {
+    font-size: 36rpx;
+    line-height: 48rpx;
+    color: #333;
+    font-weight: bold;
+    margin-left: 24rpx;
+    margin-right: 16rpx;
+  }
+  .user-center-card__header__transparent {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+  }
+  .user-center-card__icon {
+    line-height: 96rpx;
+  }

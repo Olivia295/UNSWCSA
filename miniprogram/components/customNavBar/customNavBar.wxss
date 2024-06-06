@@ -1,0 +1,19 @@
+/* components/customNavBar/customNavBar.wxss */
+.nav-bar{ 
+    position: fixed; 
+    width: 100%; 
+    top: 0; 
+    color: #ddd; 
+    /* background: #fff; */
+}
+.nav-bar .title{ 
+    /* width: 60%;  */
+    color: #333; 
+    font-size: 18px; 
+    font-weight: bold;
+    /* background: #fff;  */
+    position: absolute; 
+    border-radius: 50px; 
+    /* background: #ddd;  */
+    padding-left: 14px;
+}

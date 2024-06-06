@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/mainPage/mainPage",
+    "pages/discountFoodPage/discountFoodPage",
+    "pages/profilePage/profilePage",
+    "pages/activityShowPage/activityShowPage",
+    "pages/discountShowPage/discountShowPage",
+    "pages/webViewPage/webViewPage"
+  ],
+  "window": {
+    "navigationStyle": "custom",
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "UNSWCSA",
+    "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "tabBar": {
+    "color": "#A2A9B0",
+    "custom": true,
+    "selectedColor": "#07C160",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/mainPage/mainPage",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/discountFoodPage/discountFoodPage",
+        "text": "优惠"
+      },
+      {
+        "pagePath": "pages/profilePage/profilePage",
+        "text": "我的"
+      }
+    ]
+  }
+}

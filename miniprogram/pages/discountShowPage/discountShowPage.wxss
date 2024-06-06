@@ -1,0 +1,117 @@
+/* pages/discountShowPage/discountShowPage.wxss */
+.custom-title {
+    margin-left: 16rpx;
+    font-size: 36rpx;
+    font-weight: 600;
+  }
+
+.grid {
+  display: flex;
+  align-items: center;
+  padding: 10rpx; /* 调整间距 */
+}
+
+.grid-left,
+.grid-right {
+  display: flex; 
+  justify-content: center; /* 水平居中 */
+}
+
+.grid-left {
+  margin-right: 10rpx; /* 调整图标与文字间距 */
+}
+
+.grid-right {
+    margin-left: 10rpx; /* 调整图标与文字间距 */
+  }
+
+.bar-copyLocation,
+.bar-jump2Map {
+  width: 254rpx;
+  height: 80rpx;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bar-copyLocation {
+  background: #ffece9;
+  color: #fa4126;
+  border-radius: 40rpx 0 0 40rpx;
+}
+
+.bar-jump2Map {
+  background-color: #fa4126;
+  border-radius: 0rpx 40rpx 40rpx 0rpx;
+}
+
+.flex {
+  display: flex;
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  width: 100%; /* 确保容器占满宽度 */
+}
+
+.center {
+  width: 100%;
+}
+
+.bottom-operation {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .discountShowPage--anyButton{
+    --td-button-default-bg-color : #d54941;
+    --td-button-default-color : #fff;
+  }
+
+  .discountShowPage--shareButton{
+    --td-button-border-radius : 40rpx 0rpx 0rpx 40rpx;
+    --td-button-default-bg-color : #fff0ed;
+    --td-button-default-color : #000;
+    margin: 0rpx;
+  }
+
+  .discountShowPage--openMapButton{
+    --td-button-border-radius : 0rpx 40rpx 40rpx 0rpx;
+    --td-button-default-bg-color : #d54941;
+    --td-button-default-color : #fff;
+    margin: 0rpx;
+  }
+
+  .bottom-flex {
+    display: flex;
+    justify-content: space-between; /* 元素间的间距均匀分布 */
+    align-items: center;
+    width: 100%;
+  }
+
+  .button-group {
+    display: flex;
+    flex-grow: 1; 
+  }
+
+  .button-group t-button {
+    flex-grow: 1; 
+  }
+
+  .button-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-content {
+    padding-right: 12rpx; /* 维持原有的右侧内边距 */
+    margin-right: 12rpx; /* 新增文字和图标之间的12rpx外边距 */
+}
+
+.text-content {
+    padding-left: 12rpx; /* 在文字的左侧添加12rpx的内边距 */
+}
