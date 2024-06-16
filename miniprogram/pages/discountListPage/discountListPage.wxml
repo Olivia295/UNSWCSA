@@ -1,4 +1,4 @@
-<!--pages/discountFood/discountFood.wxml-->
+<!--pages/discountListPage/discountListPage.wxml-->
 <t-navbar t-class-placeholder="t-navbar-placeholder" t-class-content="t-navbar-content">
   <view slot="left" class="custom-title">美食</view>
 </t-navbar>
@@ -9,8 +9,8 @@
 		t-class-title="custom-cell"
 		t-class-description="custom-cell"
 		title="{{item.name}}"
-		description="{{item.discount}}"
-		image="https://tdesign.gtimg.com/mobile/demos/avatar1.png"
+		description="{{item.area}}"
+		image="{{item.imgFileID}}"
 		note="{{item.type}}"
 		hover
 		arrow
@@ -25,4 +25,3 @@
 	</view>
 </view>
 	
-

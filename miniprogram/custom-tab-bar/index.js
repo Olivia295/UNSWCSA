@@ -6,7 +6,7 @@ Component({
   data: {
     value: '/pages/mainPage/mainPage',
     tabBar: [{
-      url: '/pages/discountFoodPage/discountFoodPage',
+      url: '/pages/discountListPage/discountListPage',
       icon: 'map-search',
       label: '优惠',
     }, {

@@ -1,18 +1,20 @@
 <!--pages/profilePage/profilePage.wxml-->
 
 <view>
-  <block>
+  <block wx:if ="{{userInfo}}">
     <view class="user-center-card__header" style="margin-top: {{192 + navBarHeight}}rpx;" bind:tap="gotoUserEditPage">
-      <t-avatar
-        t-class="avatar"
-        mode="aspectFill"
-        class="user-center-card__header__avatar"
-        image="../../images/avatar.png"
-      />
-      <view class="user-center-card__header__name">{{'微信用户'}}</view>
+			<image src='{{userInfo.avatarUrl}}' class='avatar'></image>
+      <view class="user-center-card__header__name">{{userInfo.nickName}}</view>
     </view>
+		<!-- <button wx:if="{{canIUseGetUserProfile}}" type="primary" class="wx-login-btn" bindtap="getUserProfile">微信直接登录</button> -->
   </block>
-	<t-cell title="查看我的学联卡" hover arrow leftIcon="creditcard" bordered="{{false}}" />
+	<block wx:else class="login-container">
+		<view class="user-center-card__header login-container" style="margin-top: {{192 + navBarHeight}}rpx;" >
+			<t-button size="large" class="wechatLogInButton" icon="logo-wechat-stroke" content="使用微信登录" bindtap="login"></t-button>
+			<text class="tip-text">登录后即可绑定/注册UNSWCSA学联卡</text>
+    </view>
+	</block>
+	<t-cell wx:if="{{userInfo}}" title="查看我的学联卡" hover arrow leftIcon="creditcard" bordered="{{false}}" bindtap="print"/>
 	<t-demo >
 		<t-cell-group theme="card" bordered>
 			<t-cell class="cell" title = "用户指南" leftIcon="portrait" note="产品使用指南及Q&A" hover arrow></t-cell>
@@ -24,22 +26,8 @@
 		<t-cell-group theme="card" bordered>
 			<t-cell title = "关于UNSWCSA" leftIcon="chat-bubble" hover arrow></t-cell>
 		</t-cell-group>
+		<t-button wx:if="{{userInfo}}" size="large" class="wechatLogOutButton" icon="logout" content="退出登录" bindtap="logOut"></t-button>
 	</t-demo>
 
 
-	<!-- <t-cell title="查看我的学联卡" leftIcon="creditcard" hover arrow /> -->
-	
-
-	<!-- <t-divider /> -->
-
-	<!-- <t-cell-group theme="card" bordered>
-		<t-cell class="cell" title = "用户指南" leftIcon="portrait" note="产品使用指南及Q&A" hover arrow></t-cell>
-		<t-cell class="cell" title = "联系客服" leftIcon="service" note="咨询学联卡及提出反馈" hover arrow ></t-cell>
-	</t-cell-group> -->
-	
-	<!-- <t-divider /> -->
-
-	<!-- <t-cell-group theme="card" bordered>
-		<t-cell title = "关于UNSWCSA" leftIcon="chat-bubble" hover arrow></t-cell>
-	</t-cell-group> -->
 </view>

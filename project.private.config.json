@@ -14,8 +14,8 @@
           "scene": null
         },
         {
-          "name": "discountFoodPage",
-          "pathName": "pages/discountFoodPage/discountFoodPage",
+          "name": "discountListPage",
+          "pathName": "pages/discountListPage/discountListPage",
           "query": "",
           "launchMode": "default",
           "scene": null

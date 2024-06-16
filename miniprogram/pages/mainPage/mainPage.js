@@ -1,142 +1,155 @@
 // pages/mainPage/mainPage.js
 var app = getApp();
+// const _ = db.command
+let isAll = false
 const imageCdn = 'https://tdesign.gtimg.com/mobile/demos';
 const swiperList = [
-  {
-    value: `${imageCdn}/swiper1.png`,
-    ariaLabel: '图片1',
-  },
-  {
-    value: `${imageCdn}/swiper2.png`,
-    ariaLabel: '图片2',
-  },
-  {
-    value: `${imageCdn}/swiper1.png`,
-    ariaLabel: '图片1',
-  },
-  {
-    value: `${imageCdn}/swiper2.png`,
-    ariaLabel: '图片2',
-  },
+    {
+        value: `${imageCdn}/swiper1.png`,
+        ariaLabel: '图片1',
+    },
+    {
+        value: `${imageCdn}/swiper2.png`,
+        ariaLabel: '图片2',
+    },
+    {
+        value: `${imageCdn}/swiper1.png`,
+        ariaLabel: '图片1',
+    },
+    {
+        value: `${imageCdn}/swiper2.png`,
+        ariaLabel: '图片2',
+    },
 ];
 
 Page({
 
-  /**
-   * 页面的初始数据
-   */  
-  data: {
-    current: 1,
-    autoplay: true,
-    duration: 500,
-    interval: 5000,
-    swiperList,
+    /**
+     * 页面的初始数据
+     */
+    data: {
+        current: 1,
+        autoplay: true,
+        duration: 500,
+        interval: 5000,
+        swiperList,
+        navBarHeight: app.globalData.navBarHeight,
 
-    navBarHeight: app.globalData.navBarHeight,
+        userInfo: null,
 
-    activityList: [{title: "hao", description: "444",imageURL: "baidu.com"}],
+        activityList: [],
+        page: 0,
+        isLoad: false,
+        isShow: false,
+    },
 
-    // tabPanelstyle: '',
+    /**
+     * 生命周期函数--监听页面加载
+     */
+    onLoad(options) {
+        this.setData({
+            userInfo: app.globalData.userInfo
+        })
 
-    arr : [],
+        isAll = false
+        this.setData({
+            page: 0,
+            activityList: [],
+            isLoad: false,
+            isShow: false
+        })
+        this.getPages()
+    },
 
-    mapCtx:null,
+    /**
+     * 生命周期函数--监听页面初次渲染完成
+     */
+    onReady() {
 
-    tabList: [{"label":"活动0","key":0},{"label":"活动1","key":1},{"label":"活动2","key":2}],
-  },
+    },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
-    this.data.mapCtx = wx.createMapContext('map')
-  },
+    /**
+     * 生命周期函数--监听页面显示
+     */
+    onShow() {
+        this.getTabBar().init();
+    },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
+    /**
+     * 生命周期函数--监听页面隐藏
+     */
+    onHide() {
 
-  },
+    },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    this.getTabBar().init();
-  },
+    /**
+     * 生命周期函数--监听页面卸载
+     */
+    onUnload() {
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
+    },
 
-  },
+    /**
+     * 页面相关事件处理函数--监听用户下拉动作
+     */
+    onPullDownRefresh() {
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
+    },
 
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
-  },
-
-  openLocation(){
-    wx.openLocation({
-        latitude: -33.92286536760274,    // 上海的纬度
-         longitude: 151.18447011533505, // 上海的经度
-         name: '111', // 地点名称
-         address: '学校', // 地址的详细说明
-         scale: 18, // 缩放比例
-         success: function(res) {
-           console.log('打开地图成功');
-        },
-        fail: function(err) {
-           console.log('打开地图失败', err);
+    /**
+     * 页面上拉触底事件的处理函数
+     */
+    onReachBottom() {
+        console.log('上拉触底事件触发')
+        if (isAll) {
+            return false
         }
-   });
-  },
+        this.setData({
+            page: this.data.page + 20
+        })
+        //每次下拉页数增加并获取数据
+        this.getPages()
+    },
 
-  onTabsChange(event) {
-    console.log(`Change tab, tab-panel value is ${event.detail.value}.`);
-  },
+    /**
+     * 用户点击右上角分享
+     */
+    onShareAppMessage() {
 
-  onTabsClick(event) {
-    console.log(`Click tab, tab-panel value is ${event.detail.value}.`);
-  },
+    },
 
-    onReady: function () {
-    const arr = []
-    for (let i = 0; i < 20; i++) arr.push(i)
-    this.setData({
-      arr
-    })
+    getPages() {
+        let that = this
+        that.setData({
+            isLoad: true,
+            isShow: true
+        })
 
-    setTimeout(() => {
-      this.setData({
-        triggered: true,
-      })
-    }, 1000)
-  },
+        wx.cloud.database().collection('activityList').skip(that.data.page).get()
+            .then(res => {
+                console.log(res.data)
+                let list = that.data.activityList
+                list = list.concat(res.data)
+                if (res.data.length < 20) {
+                    isAll = true
+                    that.setData({
+                        activityList: list,
+                        isLoad: false
+                    })
+                } else {
+                    that.setData({
+                        activityList: list,
+                        isShow: false
+                    })
+                }
+            })
+    },
+
+    openWebView(e) {
+        console.log(e.currentTarget.dataset.link)
+        wx.navigateTo({
+            url: '/pages/webViewPage/webViewPage?link=' + e.currentTarget.dataset.link,
+        })
+    },
 })
 

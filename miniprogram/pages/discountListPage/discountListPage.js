@@ -113,16 +113,3 @@ Page({
 
   }
 })
-
-            // const length = res.data.length
-            // for (let i = 0; i < length; i++) {
-            //   const x = Math.floor(Math.random() * length)
-            //   const y = Math.floor(Math.random() * length)
-            //   const temp = res.data[x]
-            //   res.data[x] = res.data[y]
-            //   res.data[y] = temp
-            // } 
-
-            // this.setData({
-            //     discountList: res.data
-            // })

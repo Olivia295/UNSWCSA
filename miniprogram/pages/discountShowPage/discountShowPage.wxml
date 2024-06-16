@@ -5,7 +5,8 @@
 	</t-navbar>
 </block>
 <block wx:elif="{{pages.length == 0}}">
-	<t-navbar t-class-placeholder="t-navbar-placeholder" t-class-content="t-navbar-content" left-arrow bindtap="reLaunchBack">
+	<t-navbar t-class-placeholder="t-navbar-placeholder" t-class-content="t-navbar-content" left-arrow
+		bindtap="reLaunchBack">
 		<view slot="left" class="custom-title"></view>
 	</t-navbar>
 </block>
@@ -17,8 +18,7 @@
 	<t-divider />
 </view>
 
-<t-image src="{{imgData}}" mode="heightFix" width="72" height="72" aria-label="一个放置在墙角的黄色行李箱" />
-<!-- <t-button icon="map" content="跳转" bindtap="openWebView" data-link="https://mp.weixin.qq.com/s/Mj8B0Fll_DqKPvX7ZKz9Fw"></t-button> -->
+<t-image src="{{imgData}}" mode="heightFix" width="72" height="72" aria-label="{{name}}" />
 
 <view class="padding">
 	<view wx:if="{{telephone != ''}}" class="padding-xl radius shadow grid">
@@ -40,6 +40,7 @@
 			微信：{{wechat}}
 		</text>
 	</view>
+
 	<view wx:if="{{discount != ''}}" class="padding-xl radius shadow grid text-cut">
 		<view class="grid-left">
 			<t-icon name="discount" size="36rpx" />
@@ -51,6 +52,7 @@
 			<t-icon name="copy" size="36rpx" />
 		</view>
 	</view>
+
 	<view wx:if="{{location != ''}}" class="padding-xl radius shadow grid text-cut">
 		<view class="grid-left">
 			<t-icon name="location" size="36rpx" />
@@ -58,10 +60,6 @@
 		<text>
 			地址：{{location}}
 		</text>
-		<view>
-
-		</view>
-			
 	</view>
 </view>
 
@@ -69,21 +67,11 @@
 	<view class="footer-cont flex flex-between wr-class">
 		<block>
 			<view class="flex radius padding">
-				<!-- <view class="bar-copyLocation" bindtap="toAddCart">
-					复制地址
-				</view> -->
 				<t-button size="large" icon="icon" shape="square" aria-label="分享" class="anyButton" bindtap="copy"></t-button>
 				<view class="button-group"></view>
-				
-				<t-button size="large" class="shareButton" open-type="share" icon="copy" content="分享商家">
-				</t-button>
-				<t-button size="large" class="openMapButton" icon="map" content="打开地图" bindtap="openMap">
-				</t-button>
+				<t-button size="large" class="shareButton" open-type="share" icon="copy" content="分享商家"></t-button>
+				<t-button size="large" class="openMapButton" icon="map" content="打开地图" bindtap="openMap"></t-button>
 			</view>
 		</block>
 	</view>
 </view>
-	
-
-
-

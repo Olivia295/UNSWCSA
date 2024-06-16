@@ -1,2 +1,71 @@
 <!--pages/activityShowPage/activityShowPage.wxml-->
-<text>pages/activityShowPage/activityShowPage.wxml{{id}}</text>
+<block wx:if="{{pages.length == 1}}">
+	<t-navbar t-class-placeholder="t-navbar-placeholder" t-class-content="t-navbar-content" left-arrow go-back>
+		<view slot="left" class="custom-title"></view>
+	</t-navbar>
+</block>
+<block wx:elif="{{pages.length == 0}}">
+	<t-navbar t-class-placeholder="t-navbar-placeholder" t-class-content="t-navbar-content" left-arrow
+		bindtap="reLaunchBack">
+		<view slot="left" class="custom-title"></view>
+	</t-navbar>
+</block>
+
+<view>
+	<view class="radius text-xl margin-top padding-lr">{{title}}</view>
+</view>
+<view class="padding-lr">
+	<t-divider />
+</view>
+
+<t-image src="{{posterData}}" mode="heightFix" width="72" height="72" aria-label="{{title}}" />
+
+<view wx:if="{{introduction != ''}}" class="padding-xl radius shadow grid text-cut">
+	<view class="grid-left">
+		<t-icon name="location" size="36rpx" />
+	</view>
+	<text>
+		简介：{{introduction}}
+	</text>
+</view>
+
+<view wx:for="{{tags}}" wx:for-item="tag">
+	<div>{{tag}}</div>
+</view>
+
+<view wx:if="{{activityAddress != ''}}" class="padding-xl radius shadow grid text-cut">
+	<view class="grid-left">
+		<t-icon name="location" size="36rpx" />
+	</view>
+	<text>
+		地址：{{activityAddress}}
+	</text>
+</view>
+
+<view wx:if="{{activityPeriod != ''}}" class="padding-xl radius shadow grid text-cut">
+	<view class="grid-left">
+		<t-icon name="location" size="36rpx" />
+	</view>
+	<text>
+		地址：{{activityPeriod}}
+	</text>
+</view>
+
+<t-button size="large" class="openWebViewButton" aria-label="详情介绍" icon="file-search" content="详情介绍"
+	bindtap="openWebView" data-link="{{link}}"></t-button>
+
+<view class="bottom-operation">
+	<view class="footer-cont flex flex-between wr-class">
+		<block>
+			<view class="flex radius padding">
+				<t-button size="large" class="openMapButton" aria-label="打开地图" icon="map-information-2" shape="square"
+					bindtap="openMap"></t-button>
+				<view class="button-group"></view>
+				<t-button size="large" class="shareButton" open-type="share" icon="copy" content="分享商家"></t-button>
+
+				<t-button size="large" class="signUpButton" aria-label="开始报名" icon="pen-ball" content="开始报名"
+					bindtap="signUp"></t-button>
+			</view>
+		</block>
+	</view>
+</view>

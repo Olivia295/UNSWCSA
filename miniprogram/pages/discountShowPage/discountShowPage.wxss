@@ -25,27 +25,6 @@
     margin-left: 10rpx; /* 调整图标与文字间距 */
   }
 
-.bar-copyLocation,
-.bar-jump2Map {
-  width: 254rpx;
-  height: 80rpx;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.bar-copyLocation {
-  background: #ffece9;
-  color: #fa4126;
-  border-radius: 40rpx 0 0 40rpx;
-}
-
-.bar-jump2Map {
-  background-color: #fa4126;
-  border-radius: 0rpx 40rpx 40rpx 0rpx;
-}
-
 .flex {
   display: flex;
   justify-content: center; /* 水平居中 */

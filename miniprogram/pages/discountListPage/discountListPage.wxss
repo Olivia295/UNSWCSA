@@ -1,4 +1,4 @@
-/* pages/discountFood/discountFood.wxss */
+/* pages/discountListPage/discountListPage.wxss */
 .custom-title {
     margin-left: 16rpx;
     font-size: 36rpx;
